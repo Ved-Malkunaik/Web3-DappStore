@@ -79,8 +79,10 @@ export const useDAppStore = () => {
     }
   };
 
+  const filteredDApps = dapps ? dapps.filter(d => d.price !== parseEther('0.007')) : dapps;
+
   return {
-    dapps,
+    dapps: filteredDApps,
     isDAppsLoading,
     readError,
     refetchDApps,
@@ -93,3 +95,4 @@ export const useDAppStore = () => {
     writeError,
   };
 };
+
